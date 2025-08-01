@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For My Sunshine Buki</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="fade-in">
+    <h1>To My Sweet Buki</h1>
+    <p class="tagline">My sunshine, my best friend, my heart.</p>
+  </header>
+
+  <section class="fade-in music-section">
+    <h2>Maria Maria 🎶</h2>
+    <div class="youtube-embed">
+      <iframe width="100%" height="315"
+        src="https://www.youtube.com/embed/w6P258KGqjM?autoplay=1&loop=1&playlist=w6P258KGqjM"
+        title="Maria Maria"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <section class="love-letter fade-in">
+    <h2>A Letter for You</h2>
+    <p>
+      My Dearest Buki,
+    </p>
+    <p>
+      From the moment you walked into my life, everything changed. You lit up my world in a way I never thought possible.
+      You are my sunshine on cloudy days, the calm in my chaos, and the home I never knew I needed. Every smile you share,
+      every laugh we echo, it all fills my heart with so much love and gratitude.
+    </p>
+    <p>
+      I want you to know how deeply I cherish you. Your kindness, your warmth, your fierce intelligence, your gentle soul —
+      they make you the most beautiful person I’ve ever known. I fall for you more with every passing day.
+    </p>
+    <p>
+      Buki, this little corner of the internet is for you. To remind you of my love. To celebrate your presence in my life.
+      To honor the joy you bring me simply by being you.
+    </p>
+    <p>
+      Thank you for being my best friend, my partner, my sunshine.
+    </p>
+    <p>
+      With all my love,  
+      <br />
+      — Yours, always.
+    </p>
+  </section>
+
+  <footer class="fade-in">
+    <p>Made with ❤️ for Samantha Maria</p>
+  </footer>
+
+  <script>
+    // Scroll animation script
+    const sections = document.querySelectorAll('.animated-section');
+
+    const revealOnScroll = () => {
+      sections.forEach(section => {
+        const top = section.getBoundingClientRect().top;
+        if (top < window.innerHeight - 50) {
+          section.classList.add('visible');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
+
+</body>
+</html>
