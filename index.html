@@ -7,14 +7,8 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav class="navbar">
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">Our Story</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="notes.html">Love Notes</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+  <div id="navbar-container"></div>
+
   
 
   <header class="fade-in">
@@ -86,6 +80,30 @@
     window.addEventListener('scroll', revealOnScroll);
     window.addEventListener('load', revealOnScroll);
   </script>
+  <script>
+  fetch('navbar.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('navbar-container').innerHTML = data;
+
+      const currentUser = localStorage.getItem("chatUser");
+      const authLink = document.getElementById("auth-link");
+
+      if (authLink) {
+        if (currentUser) {
+          authLink.innerHTML = `<a href="#" onclick="logout()">Logout (${currentUser})</a>`;
+        } else {
+          authLink.innerHTML = `<a href="login.html">Login</a>`;
+        }
+      }
+    });
+
+  function logout() {
+    localStorage.removeItem("chatUser");
+    window.location.href = "login.html";
+  }
+</script>
+
 
 </body>
 </html>

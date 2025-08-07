@@ -259,3 +259,148 @@ footer::after {
     padding: 30px 20px;
   }
 }
+/* Chat Page Styling */
+.chat-container {
+  background: #fffafc;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.chat-header {
+  text-align: center;
+  color: #d81b60;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.chat-box {
+  background: #fff;
+  border: 1px solid #ffd6e2;
+  border-radius: 10px;
+  padding: 15px;
+  height: 400px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Chat Bubbles */
+.chat-bubble {
+  max-width: 70%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  position: relative;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.chat-bubble.sent {
+  background: #ffd6e2;
+  align-self: flex-end;
+  border-bottom-right-radius: 0;
+  color: #4a004e;
+}
+
+.chat-bubble.received {
+  background: #fce4ec;
+  align-self: flex-start;
+  border-bottom-left-radius: 0;
+  color: #3c0040;
+}
+
+.chat-bubble .timestamp {
+  font-size: 0.7rem;
+  color: #777;
+  text-align: right;
+  margin-top: 6px;
+}
+
+/* Chat Form */
+.chat-form {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-form input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.chat-form button {
+  background: #d81b60;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-weight: bold;
+}
+
+.chat-form button:hover {
+  background: #c2185b;
+}
+
+/* Message Typing Animation */
+@keyframes typing {
+  0% { transform: translateY(0); opacity: 0.3; }
+  50% { transform: translateY(-5px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0.3; }
+}
+
+.typing-indicator {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #999;
+  animation: typing 1s infinite;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .chat-container {
+    padding: 20px 15px;
+  }
+
+  .chat-box {
+    height: 300px;
+  }
+
+  .chat-form input,
+  .chat-form button {
+    font-size: 0.9rem;
+  }
+}
+.login-page {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.login-buttons button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+  background-color: #ff8fab;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-buttons button:hover {
+  background-color: #e86c93;
+}
+  

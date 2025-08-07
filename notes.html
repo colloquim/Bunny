@@ -7,17 +7,11 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div id="navbar-container"></div>
+
   <header>
     <h1>Samantha Maria 💕</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">Our Story</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="notes.html">Love Letter</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+   
   </header>
 
   <main class="notes">
@@ -52,6 +46,30 @@
     © 2025 <span>Collins & Samantha</span> — Still choosing each other every day.
   </p>
 </footer>
+<script>
+  fetch('navbar.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('navbar-container').innerHTML = data;
+
+      const currentUser = localStorage.getItem("chatUser");
+      const authLink = document.getElementById("auth-link");
+
+      if (authLink) {
+        if (currentUser) {
+          authLink.innerHTML = `<a href="#" onclick="logout()">Logout (${currentUser})</a>`;
+        } else {
+          authLink.innerHTML = `<a href="login.html">Login</a>`;
+        }
+      }
+    });
+
+  function logout() {
+    localStorage.removeItem("chatUser");
+    window.location.href = "login.html";
+  }
+</script>
+
 
 </body>
 </html>
